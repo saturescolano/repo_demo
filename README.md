@@ -33,14 +33,14 @@ Antes de poder ejecutar este proyecto, asegúrate de tener:
 - ✅ Acceso a la cuenta de **Snowflake** del curso (`civicapartner.west-europe.azure`)
 - ✅ Tu rol asignado: `CURSO_DATA_ENGINEERING`
 - ✅ Tus tres bases de datos de **DEV** creadas en Snowflake:
-  - `<ALUMNOX>_DEV_BRONZE_DB`
+  - `<ALUMNOX>_`
   - `<ALUMNOX>_DEV_SILVER_DB`
   - `<ALUMNOX>_DEV_GOLD_DB`
 - ✅ El warehouse `WH_CURSO_DATA_ENGINEERING` con permisos USAGE
 - ✅ La variable de entorno **`DBT_ENVIRONMENTS`** configurada en tu profile
   de dbt Cloud apuntando a `<ALUMNOX>_DEV` (sin sufijo `_BRONZE_DB`).
 - ✅ El esquema `sql_server_dbo` ya poblado con los datos del curso en tu
-  base de datos `<ALUMNOX>_DEV_BRONZE_DB`.
+  base de datos `<ALUMNOX>_`.
 
 ---
 
@@ -183,7 +183,7 @@ en el directorio `dbt_packages/`.
 dbt seed
 ```
 
-Esto crea la tabla `country_codes` en `<ALUMNOX>_DEV_BRONZE_DB.seed_data`.
+Esto crea la tabla `country_codes` en `<ALUMNOX>_.seed_data`.
 
 ### 4️⃣ Validar la conexión
 
@@ -313,7 +313,7 @@ dbt deps
 
 ### ❌ `Snapshot 'users_snapshot_timestamp' has no rows to insert`
 
-**Causa:** No tienes datos en `<ALUMNOX>_DEV_BRONZE_DB.sql_server_dbo.users`.
+**Causa:** No tienes datos en `<ALUMNOX>_.sql_server_dbo.users`.
 
 **Solución:** Asegúrate de que tu Bronze está poblada (los datos los provee
 el curso, deben haberse cargado al inicio).

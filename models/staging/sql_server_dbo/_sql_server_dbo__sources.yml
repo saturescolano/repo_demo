@@ -5,7 +5,7 @@
 # transaccionales del e-commerce: usuarios, pedidos, productos, eventos, etc.
 #
 # El alumno deberá:
-#   1. Asegurarse de que su BD <ALUMNO>_DEV_BRONZE_DB existe en Snowflake
+#   1. Asegurarse de que su BD <ALUMNO>_ existe en Snowflake
 #   2. Que el schema sql_server_dbo está poblado con los datos del curso
 #   3. Validar con: dbt source freshness --select source:sql_server_dbo
 # ============================================================================
@@ -20,7 +20,7 @@ sources:
       e-commerce (SQL Server). Replicados a Snowflake mediante Fivetran.
 
     schema: sql_server_dbo
-    database: "DEV_BRONZE_DB{{ env_var('DBT_ENVIRONMENTS', 'FAIL') }}_BRONZE_DB"
+    database: "{{ env_var('DBT_ENVIRONMENTS', 'FAIL') }}_BRONZE_DB"
 
     quoting:
       database: false
